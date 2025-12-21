@@ -1,3 +1,4 @@
+import { getSkillCategories } from '@/lib/data';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -5,52 +6,7 @@ const Skills = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const skillCategories = [
-    {
-      title: "Languages & Runtimes",
-      skills: [
-        { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-        { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-        { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-        { name: "Go", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" },
-      ]
-    },
-    {
-      title: "Databases",
-      skills: [
-        { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-        { name: "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
-        { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-        { name: "Elasticsearch", icon: "https://cdn.simpleicons.org/elasticsearch/00BFB3" },
-      ]
-    },
-    {
-      title: "Message Queues & Streaming",
-      skills: [
-        { name: "Kafka", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" },
-        { name: "RabbitMQ", icon: "https://cdn.simpleicons.org/rabbitmq/FF6600" },
-        { name: "AWS SQS", icon: "https://cdn.simpleicons.org/amazonsqs/FF9900" },
-      ]
-    },
-    {
-      title: "DevOps & Cloud",
-      skills: [
-        { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-        { name: "Kubernetes", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg" },
-        { name: "AWS", icon: "https://cdn.simpleicons.org/amazonaws/FF9900" },
-        { name: "Terraform", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" },
-      ]
-    },
-    {
-      title: "System Design",
-      skills: [
-        { name: "Microservices", customIcon: true },
-        { name: "Event-Driven", customIcon: true },
-        { name: "API Design", customIcon: true },
-        { name: "Distributed Systems", customIcon: true },
-      ]
-    }
-  ];
+  const skillCategories = getSkillCategories()
 
   const SystemDesignIcon = ({ name }: { name: string }) => (
     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">

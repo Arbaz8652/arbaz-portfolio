@@ -9,7 +9,8 @@ import {
   Globe,
   Zap,
   Activity,
-  LucideIcon
+  LucideIcon,
+  RectangleEllipsisIcon
 } from 'lucide-react';
 
 // ============================================
@@ -98,7 +99,8 @@ export const getPersonalInfo = (): PersonalInfo => ({
 
 export const getHeroContent = () => ({
   badge: 'Fullstack Software Engineer',
-  title: 'Building Scalable Systems for Fintech',
+  title: 'Building # for Fintech',
+  titleGredient:'Scalable Systems',
   description: `Passionate about designing robust backend architectures with expertise in Node.js, PostgreSQL, Microservices, React.js, and System Reliability. Focused on performance optimization and building APIs that handle millions of requests.`,
   techHighlights: ['Node.js', 'PostgreSQL', 'Microservices', 'React.js', 'System Reliability']
 });
@@ -109,7 +111,7 @@ export const getHeroContent = () => ({
 
 export const getAboutContent = () => ({
   paragraphs: [
-    `I'm a Backend Software Engineer with over 3+ years of experience building scalable, reliable systems in the fintech industry. My passion lies in designing elegant solutions to complex problems—whether that's architecting a microservices ecosystem or optimizing database queries for sub-millisecond response times.`,
+    `I'm a Fullstack Software Engineer with over 3+ years of experience building scalable, reliable systems in the fintech industry. My passion lies in designing elegant solutions to complex problems—whether that's architecting a microservices ecosystem or optimizing database queries for sub-millisecond response times.`,
     `Currently, I focus on building payment infrastructure and financial APIs that process millions of transactions daily. I believe in writing clean, maintainable code and building systems that are not just functional, but resilient and observable.`,
     `When I'm not coding, you'll find me contributing to open-source projects, writing technical articles, or exploring new technologies that push the boundaries of what's possible in backend development.`
   ]
@@ -120,6 +122,11 @@ export const getAboutHighlights = (): AboutHighlight[] => [
     icon: Server,
     title: 'API Design',
     description: 'RESTful & GraphQL APIs handling millions of requests'
+  },
+  {
+    icon: RectangleEllipsisIcon,
+    title: 'React Web Development',
+    description: 'Builds scalable, high-performance user interfaces with React'
   },
   {
     icon: Database,
@@ -166,7 +173,7 @@ export const getSkillCategories = (): SkillCategory[] => [
     skills: [
       { name: 'Kafka', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg' },
       { name: 'RabbitMQ', icon: 'https://cdn.simpleicons.org/rabbitmq/FF6600' },
-      { name: 'AWS SQS', icon: 'https://cdn.simpleicons.org/amazonsqs/FF9900' },
+      { name: 'AWS SQS',  customIcon: true  },
     ]
   },
   {
@@ -186,7 +193,14 @@ export const getSkillCategories = (): SkillCategory[] => [
       { name: 'API Design', customIcon: true },
       { name: 'Distributed Systems', customIcon: true },
     ]
-  }
+  },
+   {
+    title: 'Frameworks',
+    skills: [
+      { name: 'React.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
+      { name: 'Redux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg' },
+    ]
+  },
 ];
 
 // ============================================

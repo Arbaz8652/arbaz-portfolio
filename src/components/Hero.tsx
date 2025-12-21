@@ -1,12 +1,15 @@
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Download, Github, Linkedin, ChevronDown } from 'lucide-react';
+import { getHeroContent, getPersonalInfo } from '@/lib/data';
+import { useRef } from 'react';
 
 const Hero = () => {
   const scrollToAbout = () => {
     document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
   };
-
+  const aboutMe = getHeroContent()
+  const title = aboutMe.title.split('#')
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-20">
       <div className="container mx-auto">
@@ -56,7 +59,7 @@ const Hero = () => {
               transition={{ delay: 0.2 }}
             >
               <span className="inline-block font-mono text-sm text-primary mb-4 px-3 py-1 border border-primary/30 rounded-full">
-                Backend Software Engineer
+                {aboutMe.badge}
               </span>
             </motion.div>
 
@@ -66,7 +69,9 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              Building <span className="text-gradient">Scalable Systems</span> for Fintech
+              {title[0]}
+              <span className="text-gradient">{aboutMe.titleGredient}
+                </span>{title[1]}
             </motion.h1>
 
             <motion.p
