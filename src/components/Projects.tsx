@@ -2,46 +2,13 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Github, ExternalLink, Database, Server, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { getProjects } from '@/lib/data';
 
 const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const projects = [
-    {
-      title: "Payment Gateway Service",
-      description: "High-throughput payment processing system handling multi-currency transactions with 99.99% uptime.",
-      problem: "Legacy payment system couldn't scale beyond 1000 TPS with frequent timeouts during peak hours.",
-      solution: "Built event-driven architecture with Kafka, implemented circuit breakers, and horizontal scaling.",
-      result: "Achieved 10,000+ TPS with 40ms average latency and zero payment failures in 6 months.",
-      tech: ["Node.js", "PostgreSQL", "Kafka", "Redis", "Docker"],
-      icon: Zap,
-      github: "#",
-      live: "#"
-    },
-    {
-      title: "Real-time Analytics Pipeline",
-      description: "Distributed data pipeline processing millions of events daily for business intelligence.",
-      problem: "Analytics queries taking 30+ seconds, blocking critical business decisions.",
-      solution: "Implemented stream processing with materialized views and time-series optimizations.",
-      result: "Reduced query time to <100ms, enabling real-time dashboards for 500+ users.",
-      tech: ["Node.js", "TimescaleDB", "Redis", "WebSocket", "Grafana"],
-      icon: Database,
-      github: "#",
-      live: "#"
-    },
-    {
-      title: "Microservices Platform",
-      description: "Cloud-native platform with service mesh, automated scaling, and comprehensive observability.",
-      problem: "Monolithic architecture causing 2-week deployment cycles and cascading failures.",
-      solution: "Decomposed into 20+ microservices with API gateway, distributed tracing, and blue-green deployments.",
-      result: "Enabled daily deployments, 60% faster feature delivery, and isolated failure domains.",
-      tech: ["Node.js", "gRPC", "Kubernetes", "Istio", "Prometheus"],
-      icon: Server,
-      github: "#",
-      live: "#"
-    }
-  ];
+  const projects = getProjects()
 
   return (
     <section id="projects" className="relative py-24 px-6" ref={ref}>

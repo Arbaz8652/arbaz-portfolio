@@ -39,15 +39,17 @@ const Experience = () => {
               {/* Timeline dot */}
               <div className="absolute left-0 lg:left-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background -translate-x-1/2 lg:-translate-x-1/2 z-10" />
 
-              {/* Content */}
-              <div className={`pl-8 lg:pl-0 lg:pr-12 lg:text-left`}>
+              <div className="pl-8 lg:pl-0 lg:pr-12 lg:text-left">
                 <div className="p-6 card-gradient border border-border rounded-xl hover:border-primary/50 transition-all duration-300">
-                  <div className={`flex items-center gap-2 mb-2`}>
+
+                  {/* Title */}
+                  <div className="flex items-center gap-2 mb-2">
                     <Briefcase size={16} className="text-primary" />
                     <span className="font-semibold text-lg">{exp.title}</span>
                   </div>
-                  
-                  <div className={`flex items-center gap-4 mb-4 text-sm text-muted-foreground`}>
+
+                  {/* Company + Period */}
+                  <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
                     <span className="text-primary font-medium">{exp.company}</span>
                     <span className="flex items-center gap-1">
                       <Calendar size={14} />
@@ -55,18 +57,51 @@ const Experience = () => {
                     </span>
                   </div>
 
+                  {/* Description */}
                   <p className="text-muted-foreground mb-4">{exp.description}</p>
 
-                  <ul className={`space-y-2 lg:text-left}`}>
-                    {exp.achievements.map((achievement, j) => (
-                      <li key={j} className="text-sm text-muted-foreground flex items-start gap-2">
-                        <span className={`text-primary`}>•</span>
-                        <span>{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Backend Achievements */}
+                  {exp.backendAchievements?.length > 0 && (
+                    <>
+                      <h4 className="text-sm font-semibold text-primary mb-2">
+                        Backend Contributions
+                      </h4>
+                      <ul className="space-y-2 mb-4">
+                        {exp.backendAchievements.map((achievement, j) => (
+                          <li
+                            key={`backend-${j}`}
+                            className="text-sm text-muted-foreground flex items-start gap-2"
+                          >
+                            <span className="text-primary">•</span>
+                            <span>{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+
+                  {/* Frontend Achievements */}
+                  {exp.frontEndAchievements?.length > 0 && (
+                    <>
+                      <h4 className="text-sm font-semibold text-primary mb-2">
+                        Frontend Contributions
+                      </h4>
+                      <ul className="space-y-2">
+                        {exp.frontEndAchievements.map((achievement, j) => (
+                          <li
+                            key={`frontend-${j}`}
+                            className="text-sm text-muted-foreground flex items-start gap-2"
+                          >
+                            <span className="text-primary">•</span>
+                            <span>{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
                 </div>
               </div>
+
 
               {/* Spacer for alternating layout */}
               {/* <div className="hidden lg:block lg:w-1/2" /> */}

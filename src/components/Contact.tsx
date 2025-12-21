@@ -24,20 +24,45 @@ const Contact = () => {
   const { resumeUrl } = getPersonalInfo();
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  console.log(formData)
+  try {
+    const res = await fetch(import.meta.env.VITE_CONTACT_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': import.meta.env.VITE_CONTACT_API_KEY,
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (!res.ok) {
+      throw new Error('Failed to send message');
+    }
+
     toast({
-      title: "Message sent!",
+      title: 'Message sent!',
       description: "Thanks for reaching out. I'll get back to you soon.",
     });
-    
-    setFormData({ name: '', email: '', message: '' });
+
+    setFormData({
+      name: '',
+      email: '',
+      message: '',
+    });
+
+  } catch (err) {
+    toast({
+      title: 'Something went wrong',
+      description: 'Please try again later.',
+      variant: 'destructive',
+    });
+  } finally {
     setIsSubmitting(false);
-  };
+  }
+};
 
   return (
     <section id="contact" className="relative py-24 px-6" ref={ref}>

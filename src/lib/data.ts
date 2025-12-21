@@ -75,7 +75,8 @@ export interface Experience {
   company: string;
   period: string;
   description: string;
-  achievements: string[];
+  backendAchievements: string[];
+  frontEndAchievements?: string[];
 }
 
 // ============================================
@@ -101,7 +102,8 @@ export const getHeroContent = () => ({
   badge: 'Fullstack Software Engineer',
   title: 'Building # for Fintech',
   titleGredient:'Scalable Systems',
-  description: `Passionate about designing robust backend architectures with expertise in Node.js, PostgreSQL, Microservices, React.js, and System Reliability. Focused on performance optimization and building APIs that handle millions of requests.`,
+  descriptionPretext: `Passionate about designing robust backend architectures with expertise in`,
+  descriptionPostText: ' Focused on performance optimization and building APIs that handle millions of requests.',
   techHighlights: ['Node.js', 'PostgreSQL', 'Microservices', 'React.js', 'System Reliability']
 });
 
@@ -213,13 +215,19 @@ export const getExperiences = (): Experience[] => [
     company: "Credilio Finantial Technologies Provate Limited.",
     period: "Apr-2024 - Present",
     description: "Credilio aims to issue five million Novio cards over the next three years, building on the 50,000 cards already issued during its beta phase.",
-    achievements: [
+    backendAchievements: [
       "Designed and implemented a microservices-based payment gateway reducing latency by 40%",
       "Built async processing pipeline using Kafka handling 10K+ events/second",
       "Built and maintained microservices architecture for fintech workflows.",
       "Designed and developed a centralized Bureau microservice, reducing service redundancy by 40%",
       "Integrated third-party banking and financial APIs securely.",
       "Implemented application monitoring using New Relic, improving system observability and reliability."
+    ],
+     frontEndAchievements: [
+      "Optimized frontend load times by implementing code splitting, lazy loading, and tree shaking in React applications. ",
+      "Optimized performance using Lighthouse and PageSpeed, achieving top scores in performance ",
+      "Built and maintained internal admin panels and user-facing dashboards for operational and business workflows. ",
+      "Implemented role-based UI access and dynamic views based on user permissions and application states. ",
     ]
   },
   {
@@ -227,11 +235,11 @@ export const getExperiences = (): Experience[] => [
     company: "Mountbleu Technologies Private Limited",
     period: "Nov-2022 - Mar-2024",
     description: "Software Engineer – Mounble | Optimized Product Performance & User Experience",
-    achievements: [
+    backendAchievements: [
       "Developed RESTful APIs serving 100+ enterprise clients",
       "Integrated 15+ payment providers and banking partners",
       "Implemented rate limiting and caching reducing DB load by 60%"
-    ]
+    ],
   },
   // {
   //   title: "Software Engineer",

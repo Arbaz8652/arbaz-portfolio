@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { getPersonalInfo } from '@/lib/data';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,6 +31,7 @@ const Navigation = () => {
       setIsMobileMenuOpen(false);
     }
   };
+  const persolInfo= getPersonalInfo()
 
   return (
     <motion.nav
@@ -73,7 +75,7 @@ const Navigation = () => {
               <Button
                 variant="hero"
                 size="sm"
-                onClick={() => window.open('https://your-resume-url.s3.amazonaws.com/resume.pdf', '_blank')}
+                onClick={() => window.open(persolInfo.resumeUrl, '_blank')}
               >
                 Resume
               </Button>
@@ -110,7 +112,7 @@ const Navigation = () => {
               <Button
                 variant="hero"
                 size="sm"
-                onClick={() => window.open('https://your-resume-url.s3.amazonaws.com/resume.pdf', '_blank')}
+                onClick={() => window.open(persolInfo.resumeUrl, '_blank')}
               >
                 Resume
               </Button>

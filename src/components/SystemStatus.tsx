@@ -1,7 +1,9 @@
+import { getSystemStatus } from '@/lib/data';
 import { motion } from 'framer-motion';
 import { Activity, Database, Server } from 'lucide-react';
 
 const SystemStatus = () => {
+  const SystemStatus = getSystemStatus()
   return (
     <motion.div
       className="fixed bottom-6 left-6 z-40 hidden lg:flex items-center gap-3 bg-card/80 backdrop-blur-sm border border-border rounded-lg px-4 py-2"

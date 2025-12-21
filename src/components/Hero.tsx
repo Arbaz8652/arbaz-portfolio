@@ -24,7 +24,7 @@ const Hero = () => {
             <div className="relative w-48 h-48 lg:w-64 lg:h-64">
               {/* Glow effect */}
               <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl animate-pulse-slow" />
-              
+
               {/* Image container */}
               <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary/30 glow-primary">
                 <img
@@ -33,7 +33,7 @@ const Hero = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              
+
               {/* Decorative ring */}
               <svg className="absolute inset-0 w-full h-full -rotate-90">
                 <circle
@@ -71,7 +71,7 @@ const Hero = () => {
             >
               {title[0]}
               <span className="text-gradient">{aboutMe.titleGredient}
-                </span>{title[1]}
+              </span>{title[1]}
             </motion.h1>
 
             <motion.p
@@ -80,15 +80,16 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              Passionate about designing robust backend architectures with expertise in{' '}
-              <span className="text-primary font-medium">Node.js</span>,{' '}
-              <span className="text-primary font-medium">PostgreSQL</span>,{' '}
-              <span className="text-primary font-medium">Microservices</span>, {' '}
-              <span className="text-primary font-medium">React.js</span>, and{' '}
-              <span className="text-primary font-medium">System Reliability</span>. 
-              Focused on performance optimization and building APIs that handle millions of requests.
+              {aboutMe.descriptionPretext}{' '}
+              {aboutMe.techHighlights.map((tech, index) => (
+                <span key={tech}>
+                  <span className="text-primary font-medium">{tech}</span>
+                  {index < aboutMe.techHighlights.length - 1 && ', '}
+                  {index === aboutMe.techHighlights.length - 2 && 'and '}
+                </span>
+              ))}
+              .{aboutMe.descriptionPostText}
             </motion.p>
-
             {/* CTA Buttons */}
             <motion.div
               className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8"
