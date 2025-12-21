@@ -97,7 +97,7 @@ export const getPersonalInfo = (): PersonalInfo => ({
 // ============================================
 
 export const getHeroContent = () => ({
-  badge: 'Backend Software Engineer',
+  badge: 'Fullstack Software Engineer',
   title: 'Building Scalable Systems for Fintech',
   description: `Passionate about designing robust backend architectures with expertise in Node.js, PostgreSQL, Microservices, React.js, and System Reliability. Focused on performance optimization and building APIs that handle millions of requests.`,
   techHighlights: ['Node.js', 'PostgreSQL', 'Microservices', 'React.js', 'System Reliability']
