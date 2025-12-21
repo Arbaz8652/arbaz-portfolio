@@ -219,17 +219,17 @@ export const getExperiences = (): Experience[] => [
       "Implemented rate limiting and caching reducing DB load by 60%"
     ]
   },
-  {
-    title: "Software Engineer",
-    company: "TechStartup Inc",
-    period: "2018 - 2020",
-    description: "Full-stack development with focus on backend systems and database optimization.",
-    achievements: [
-      "Built real-time notification system using WebSockets and Redis",
-      "Optimized PostgreSQL queries achieving 10x performance improvement",
-      "Integrated third-party banking APIs (XML and JSON) with custom encryption and decryption logic to enable secure customer onboarding, credit validation, and real-time financial data exchange."
-    ]
-  }
+  // {
+  //   title: "Software Engineer",
+  //   company: "TechStartup Inc",
+  //   period: "2018 - 2020",
+  //   description: "Full-stack development with focus on backend systems and database optimization.",
+  //   achievements: [
+  //     "Built real-time notification system using WebSockets and Redis",
+  //     "Optimized PostgreSQL queries achieving 10x performance improvement",
+  //     "Integrated third-party banking APIs (XML and JSON) with custom encryption and decryption logic to enable secure customer onboarding, credit validation, and real-time financial data exchange."
+  //   ]
+  // }
 ];
 
 // ============================================
