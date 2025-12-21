@@ -83,7 +83,7 @@ export interface Experience {
 
 export const getPersonalInfo = (): PersonalInfo => ({
   name: 'Arbaz Pathan',
-  title: 'Backend Software Engineer',
+  title: 'Fullstack Software Engineer',
   resumeUrl: 'https://amzn-arbaz-docs.s3.ap-southeast-1.amazonaws.com/CV_Arbaz_Pathan_15_Dec_2025.pdf',
   email: 'parbaz313@gmail.com',
   gitHubUrl: 'https://github.com/Arbaz8652',
