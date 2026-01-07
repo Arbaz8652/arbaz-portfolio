@@ -100,7 +100,7 @@ const Hero = () => {
               <Button
                 variant="hero"
                 size="lg"
-                onClick={() => window.open('https://amzn-arbaz-docs.s3.ap-southeast-1.amazonaws.com/CV_Arbaz_Pathan_15_Dec_2025.pdf', '_blank')}
+                onClick={() => window.open('https://amzn-arbaz-docs.s3.ap-southeast-1.amazonaws.com/CV_Arbaz_Pathan_2026.pdf', '_blank')}
               >
                 <Download size={18} />
                 Download Resume
