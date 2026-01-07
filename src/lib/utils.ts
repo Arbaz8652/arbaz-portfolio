@@ -11,7 +11,7 @@ export function cn(...inputs: ClassValue[]) {
 export function getResumeUrl() {
   return {
         personalInfo: {
-            resumeUrl: 'https://amzn-arbaz-docs.s3.ap-southeast-1.amazonaws.com/CV_Arbaz_Pathan_15_Dec_2025.pdf',
+            resumeUrl: 'https://amzn-arbaz-docs.s3.ap-southeast-1.amazonaws.com/CV_Arbaz_Pathan_2026.pdf',
             email: 'parbaz313@gmail.com',
             gitHubUrl: 'https://github.com/Arbaz8652',
             linkedInUrl: 'https://www.linkedin.com/in/arbaz-pathan-sde/',
